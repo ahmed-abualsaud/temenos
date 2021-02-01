@@ -1,0 +1,56 @@
+"A date string with format `Y-m-d`, e.g. `2011-05-23`."
+scalar Date @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Date")
+
+"A datetime string with format `Y-m-d H:i:s`, e.g. `2018-05-23 13:43:32`."
+scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
+
+type Query {
+    users: [User!]! @all
+    user(id: ID @eq): User @find
+
+    cards: [Card!]! @all
+    card(id: ID @eq): Card @find
+
+    transactions: [Transaction!]! @all
+    transaction(id: ID @eq): Transaction @find
+
+    notifications: [Notification!]! @all
+    notification(id: ID @eq): Notification @find
+}
+
+type User {
+    id: ID!
+    name: String!
+    email: String!
+    password: String!
+    photo: String!
+    created_at: DateTime!
+    updated_at: DateTime!
+    cards: [Card!]! @hasMany
+    transactions: [Transaction!]! @hasMany
+    notifications: [Notification!]! @hasMany
+}
+
+type Card {
+    id: ID!
+    card_number: Float!
+    balance: Float!
+    default_card: String!
+    user: User! @belongsTo
+}
+
+type Transaction {
+    id: ID!
+    card: Float!
+    end_user: String!
+    type: String!
+    amount: Float!
+    user: User! @belongsTo
+}
+
+type Notification {
+    id: ID!
+    seen: String!
+    content: String!
+    user: User! @belongsTo
+}

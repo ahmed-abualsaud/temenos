@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+html, body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+}
+
+/*--------------------------------------------------------------------------*/
+p {
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    display: inline-block;
+    padding: 5px;
+    width: 6em;
+    text-align: center;
+    margin: 8px 8px 0 10px;
+}
+p:hover {
+    border: hidden;
+}
+span {
+
+    font: 500 1.5em/1 "Oswald", sans-serif;
+    letter-spacing: 0;
+    padding: .25em 0 .325em;
+    display: block;
+    margin: 0 auto;
+    text-shadow: 0 0 80px rgba(255,255,255,.5);
+
+    /* Clip Background Image */
+
+    background: url(/../../welcome-page/images/blacks.svg) repeat-y;
+    background-size: 300px 300px;
+    -webkit-transform: rotate(50deg);
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* Animate Background Image */
+
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: aitf 10s linear infinite;
+
+    /* Activate hardware acceleration for smoother animations */
+
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+}
+span:hover{
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 40%;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    box-shadow: -3px 8px 20px 0px rgba(255, 255, 255, 1);
+    -moz-box-shadow: -3px 8px 20px 0px rgba(255, 255, 255, 1);
+    -webkit-box-shadow: -3px 8px 20px 0px rgba(255, 255, 255, 1);
+    -o-box-shadow: -3px 8px 20px 0px rgba(255, 255, 255, 1);
+    -ms-box-shadow: -3px 8px 20px 0px rgba(255, 255, 255, 1);
+}
+/* Animate Background Image */
+
+@-webkit-keyframes aitf {
+    0% { background-position: 0% 46%; }
+    100% { background-position: 100% 46%; }
+}
+/*--------------------------------------------------------------------------*/
+
+.title {
+    font-family: "Montserrat";
+    text-align: center;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1px;
+    margin: 40px 0;
+}
+
+h1 {
+    background-image: url(/../../welcome-page/images/im2.gif);
+    background-size: cover;
+    color: transparent;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    text-transform: uppercase;
+    font-size: 80px;
+    line-height: .75;
+    margin: 10px 0;
+}
+
+a {
+    text-decoration: none;
+    font-family: Poppins-Regular;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #666666;
+    margin: 0px;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+}
+
+a:focus {
+    outline: none !important;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.header{
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    height:50vw;
+    max-height:100%;
+    min-width:100%;
+    color:#eee;
+    z-index: 0;
+}
+.header:after{
+    content:"";
+    width:100%;
+    height:100%;
+    position:absolute;
+    bottom:0;
+    left:0;
+    z-index:-1;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.12) 40%,rgba(27,32,48,1) 100%);
+}
+.header:before{
+    content:"";
+    width:100%;
+    height:200%;
+    position:absolute;
+    top:0;
+    left:0;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0); backface-visibility: hidden; scale(1.0, 1.0);
+    transform: translateZ(0);
+    background:#1B2030 url(/../../bank.jpg) 50% 0 no-repeat;
+    background-size:100%;
+    background-attachment:fixed;
+    animation: grow 360s  linear 10ms infinite;
+    transition:all 0.4s ease-in-out;
+    z-index:-2
+}
+.shader{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    background: -webkit-linear-gradient(bottom, #773344, orange);
+    background: -o-linear-gradient(bottom, #773344, orange);
+    background: -moz-linear-gradient(bottom, #773344, orange);
+    background: linear-gradient(bottom, #773344, orange);
+}
+.info{
+    width:100%;
+    padding:5% 10% 0 10%;
+    text-align:center;
+    text-shadow:0 2px 3px rgba(0,0,0,0.2);
+    z-index: 3;
+}
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+.full-height {
+    height: 100vh;
+}
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+.links{
+    z-index: 600;
+}
+.links > a {
+    text-decoration: none;
+    color: white;
+    margin: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.meta{
+    font-style:italic;
+}
+.brand{
+    font-size: 25px;
+    color: #3b5998;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff!important;
+    margin: 5px;
+    box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    background:url(/../../temenos.jpg) center no-repeat;
+    background-size:cover;
+    box-shadow:0 2px 3px rgba(0,0,0,0.3);
+    margin-bottom:3px;
+    background-size: 70% 70%;
+}
+.brand:hover{
+    transform: rotate(360deg);
+    box-shadow: 0 5px 20px 10px rgba(255, 255, 255, 1);
+    -moz-box-shadow: 0 5px 20px 10px rgba(255, 255, 255, 1);
+    -webkit-box-shadow: 0 5px 20px 10px rgba(255, 255, 255, 1);
+    -o-box-shadow: 0 5px 20px 10px rgba(255, 255, 255, 1);
+    -ms-box-shadow: 0 5px 20px 10px rgba(255, 255, 255, 1);
+}
+.meta{
+    font-style:italic;
+    font-size:0.7em
+}
+/*@keyframes grow{
+    0% { transform: scale(1) translateY(0px)}
+    50% { transform: scale(1.2) translateY(-400px)}
+}*/
